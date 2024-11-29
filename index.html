@@ -3,9 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Kundalik Login</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Hello my friends</h1>
+    <h1>Kundalik Login</h1>
+    <div class="search-container">
+        <label for="name">Ism:</label>
+        <input type="text" id="name" placeholder="Ism" required>
+        
+        <label for="surname">Familiya:</label>
+        <input type="text" id="surname" placeholder="Familiya" required>
+        
+        <label for="birthdate">Tug'ilgan sana:</label>
+        <input type="date" id="birthdate" required>
+        
+        <button id="searchBtn">Qidirish</button>
+    </div>
+    
+    <div id="result"></div>
+
+
+    <script src="js.js"></script>
 </body>
 </html>
