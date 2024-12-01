@@ -18,6 +18,14 @@ input, button {
     margin: 5px;
     padding: 10px;
     font-size: 16px;
+    border-radius: 7%;
+    border: 0;
+}
+#searchBtn{
+    background: black;
+    color: whitesmoke;
+    font-family: sans-serif;
+    font-variant: normal;
 }
 
 #result {
