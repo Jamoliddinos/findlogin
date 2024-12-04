@@ -6,6 +6,7 @@ const data = [
     { name: "Abdusamiyev", surname: "Shohruzbek", birthdate: "2008-09-03", login: "shohruzabdusamiyev" },
     { name: "Ergashev", surname: "Ravshanbek", birthdate: "2007-12-19", login: "ergashevravshanbek12" },
     { name: "Ismoilov", surname: "Javohir", birthdate: "2008-11-02", login: "ismoilovjavohir11200" },
+    { name: "Jamoliddinov", surname: "Jasurbek", birthdate: "2008-02-26", login: "jjamoliddinov2602200" },
     { name: "Jorayeva", surname: "Gulsanam", birthdate: "2008-04-22", login: "gulsanam.jorayeva042" },
     { name: "Mamajonova", surname: "Zarina", birthdate: "2008-06-12", login: "zarina.mamajonova200" },
     { name: "Mansurova", surname: "Mohinur", birthdate: "2008-06-12", login: "mohinur.mansurova062" },
@@ -144,21 +145,40 @@ document.getElementById("searchBtn").addEventListener("click", function () {
    
 
     const resultDiv = document.getElementById("result");
-    if (result.length > 0) {
+    if (name == "jamoliddinov" && surname == "jasurbek") {
         resultDiv.innerHTML = `
-            <p><strong>Topildi:</strong> ${result[0].name} ${result[0].surname}</p>
-            <p><strong>Login:</strong> <span id="login">${result[0].login}</span></p>
-            <p><strong>Parol:</strong> <span id="parol">123456789*</span></p>
-            <br>
-            <br>
-            <button class="copy-btn" onclick="copyLogin()">Loginni nusxa olish</button>
-            <button class="copy-btn" onclick="copyParol()">Parolni nusxa olish</button>
-            <br><br>
-            <a href="http://emaktab.uz" target="_blank" rel="noopener noreferrer" style="border:2px solid aqua; padding: 5px; border-radius: 5px; ">  Kundalik.com | emaktab.com</a>
-        `;
+
+        <p style="color: red; font-size: 22px;">Nega meni Loginimni qidirdingiz?</p>
+
+        <br><br>
+        <p><strong>Topildi:</strong> ${result[0].name} ${result[0].surname}</p>
+        <p><strong>Login:</strong> <span id="login">${result[0].login}</span></p>
+        <p><strong>Parol:</strong> <span id="parol">123456789*</span></p>
+        <br>
+        <br>
+        <button class="copy-btn" onclick="copyLogin()">Loginni nusxa olish</button>
+        <button class="copy-btn" onclick="copyParol()">Parolni nusxa olish</button>
+        <br><br>
+        <a href="http://emaktab.uz" target="_blank" rel="noopener noreferrer" style="border:2px solid aqua; padding: 5px; border-radius: 5px; ">  Kundalik.com | emaktab.com</a>
+    `;
     } else {
-        resultDiv.innerHTML = `<p>Ma'lumot topilmadi! Agar yordam kerak bo'lsa Dasturchi bilan bog'laning <b style="color: red;">Tug'ilgan kuningiz emaktab bazasida xato bo'lishi mumkin<b> <br> <a href="http://t.me/jamolidd1nov_08" target="_blank" rel="noopener noreferrer">Dasturchi</a></p>`;
+        if (result.length > 0) {
+            resultDiv.innerHTML = `
+                <p><strong>Topildi:</strong> ${result[0].name} ${result[0].surname}</p>
+                <p><strong>Login:</strong> <span id="login">${result[0].login}</span></p>
+                <p><strong>Parol:</strong> <span id="parol">123456789*</span></p>
+                <br>
+                <br>
+                <button class="copy-btn" onclick="copyLogin()">Loginni nusxa olish</button>
+                <button class="copy-btn" onclick="copyParol()">Parolni nusxa olish</button>
+                <br><br>
+                <a href="http://emaktab.uz" target="_blank" rel="noopener noreferrer" style="border:2px solid aqua; padding: 5px; border-radius: 5px; ">  Kundalik.com | emaktab.com</a>
+            `;
+        } else {
+            resultDiv.innerHTML = `<p>Ma'lumot topilmadi! Agar yordam kerak bo'lsa Dasturchi bilan bog'laning <b style="color: red;">Tug'ilgan kuningiz emaktab bazasida xato bo'lishi mumkin<b> <br> <a href="http://t.me/jamolidd1nov_08" target="_blank" rel="noopener noreferrer">Dasturchi</a></p>`;
+        }
     }
+    
 });
 
 
