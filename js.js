@@ -117,7 +117,7 @@ const data = [
     { name: "Nomonjonov", surname: "Nasimbek", birthdate: "2010-11-24", login: "nasimbeknomonjonov" },
     { name: "Odilova", surname: "Mahliyobonu", birthdate: "2010-01-04", login: "mahliyobonuodilova" },
     { name: "Rahmatova", surname: "Marjona", birthdate: "2010-03-23", login: "marjona.rahmatova032" },
-    { name: "Salimova", surname: "Zilolasalom", birthdate: "2010-10-21", login: "zilola.salimova10201" },
+    { name: "Salimova", surname: "Zilola", birthdate: "2010-10-21", login: "zilola.salimova10201" },
     { name: "Sobitaliev", surname: "Bobomurod", birthdate: "2010-01-11", login: "bobomurodsobitaliev" },
     { name: "Tojimatova", surname: "Mohinabonu", birthdate: "2010-11-02", login: "mohinabonutojimatova" },
     { name: "To'rayeva", surname: "Masturaxon", birthdate: "2010-08-11", login: "masturatoraeva" },
@@ -152,12 +152,12 @@ document.getElementById("searchBtn").addEventListener("click", function () {
 
         <br><br>
         <p><strong>Topildi:</strong> ${result[0].name} ${result[0].surname}</p>
-        <p><strong>Login:</strong> <span id="login">${result[0].login}</span></p>
-        <p><strong>Parol:</strong> <span id="parol">123456789*</span></p>
+        <p><strong>Login:</strong> <span id="loginn">${result[0].login}</span></p>
+        <p><strong>Parol:</strong> <span id="paroll">123456789*</span></p>
         <br>
         <br>
-        <button class="copy-btn" onclick="copyLogin()">Loginni nusxa olish</button>
-        <button class="copy-btn" onclick="copyParol()">Parolni nusxa olish</button>
+        <button class="copy-btn" onclick="copyLoginn()">Loginni nusxa olish</button>
+        <button class="copy-btn" onclick="copyParoll()">Parolni nusxa olish</button>
         <br><br>
         <a href="http://emaktab.uz" target="_blank" rel="noopener noreferrer" style="border:2px solid aqua; padding: 5px; border-radius: 5px; ">  Kundalik.com | emaktab.com</a>
     `;
@@ -165,12 +165,12 @@ document.getElementById("searchBtn").addEventListener("click", function () {
         if (result.length > 0) {
             resultDiv.innerHTML = `
                 <p><strong>Topildi:</strong> ${result[0].name} ${result[0].surname}</p>
-                <p><strong>Login:</strong> <span id="login">${result[0].login}</span></p>
-                <p><strong>Parol:</strong> <span id="parol">123456789*</span></p>
+                <p><strong>Login:</strong> <span id="loginn">${result[0].login}</span></p>
+                <p><strong>Parol:</strong> <span id="paroll">123456789*</span></p>
                 <br>
                 <br>
-                <button class="copy-btn" onclick="copyLogin()">Loginni nusxa olish</button>
-                <button class="copy-btn" onclick="copyParol()">Parolni nusxa olish</button>
+                <button class="copy-btn" onclick="copyLoginn()">Loginni nusxa olish</button>
+                <button class="copy-btn" onclick="copyParoll()">Parolni nusxa olish</button>
                 <br><br>
                 <a href="http://emaktab.uz" target="_blank" rel="noopener noreferrer" style="border:2px solid aqua; padding: 5px; border-radius: 5px; ">  Kundalik.com | emaktab.com</a>
             `;
@@ -210,4 +210,68 @@ document.getElementById('name').addEventListener('input', function(e) {
 
 document.getElementById('surname').addEventListener('input', function(e) {
     e.target.value = e.target.value.replace(/[^A-Za-z]/g, '');
+});
+
+
+
+
+var log = document.getElementById('name');
+var par = document.getElementById('surname');
+var a = document.getElementById("a");
+var b= document.getElementById("b");
+
+a.addEventListener('click', ()=>{
+     a.style.bottom = "60px"; 
+    a.style.transition = "all 0.5s"
+    setTimeout(() => {
+        if (log.value == 0) {
+            a.style.bottom = "30px";
+            a.style.transition = "all 1s"
+        } else {
+            
+        }
+       
+    }, 1500);
+});
+b.addEventListener('click', ()=>{
+    b.style.bottom = "60px";  
+    b.style.transition = "all 0.5s"
+    setTimeout(() => {
+        if (par.value == "") {
+            b.style.bottom = "30px";
+            b.style.transition = "all 1s"
+        } else {
+            
+        }
+    }, 1500);
+});
+log.addEventListener('input', ()=>{
+    if (log.value.length >= 1) {
+        a.style.bottom = "60px"; 
+        a.style.transition = "all 0.5s"
+    }
+    else{
+        a.style.bottom = "30px";
+        a.style.transition = "all 1s"
+    }
+});
+par.addEventListener('input', ()=>{
+    if (par.value.length >= 1) {
+        b.style.bottom = "60px";  
+        b.style.transition = "all 0.5s"
+    }
+    else{
+        b.style.bottom = "30px";
+        b.style.transition = "all 1s"
+    }
+});
+none.addEventListener('click', ()=>{
+    if (none.checked) {
+        par.style.display = "none";
+        b.style.display = "none";
+    }
+    else{
+        par.style.display="inline-block";
+        b.style.display = "inline-block";
+    }
 });
